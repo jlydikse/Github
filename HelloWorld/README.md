@@ -19,5 +19,5 @@ Build a github portfolio for my future projects}
 
 {Helpful websites used:}
 
-{[Github](https://docs.github.com/en/get-started/quickstart/hello-world)}
-{[freecodecamp](https://www.freecodecamp.org/news/introduction-to-git-and-github/)}
+[Github]{(https://docs.github.com/en/get-started/quickstart/hello-world)}
+[freecodecamp]{(https://www.freecodecamp.org/news/introduction-to-git-and-github/)}
