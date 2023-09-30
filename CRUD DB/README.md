@@ -1,10 +1,10 @@
 # Overview
 
-{I have always been interested in working with databases, but haven't always been good at it, so I decided to create a small database Python program that communicates with sqlite3 in order to create the database and perform various SQL commands. I wanted to practice and perfect the CRUD operations within SQL using this approach, and I feel like I did a pretty great job!}
+## I have always been interested in working with databases, but haven't always been good at it, so I decided to create a small database Python program that communicates with sqlite3 in order to create the database and perform various SQL commands. I wanted to practice and perfect the CRUD operations within SQL using this approach, and I feel like I did a pretty great job!
 
-{The database I chose to create is based on a board game I helped create with the youth group I am partially in charge on for my church. We spent probably 4 months of activities creating a board game with the kids that answers a simple question, "What if, the reason there are no mythological creatures on earth anymore, is because they could not get onto Noah's Ark for some reason?" The program I created goes through and creates various tables in a database named "Dagee.db" within sqlite3. }
+### The database I chose to create is based on a board game I helped create with the youth group I am partially in charge on for my church. We spent probably 4 months of activities creating a board game with the kids that answers a simple question, "What if, the reason there are no mythological creatures on earth anymore, is because they could not get onto Noah's Ark for some reason?" The program I created goes through and creates various tables in a database named "Dagee.db" within sqlite3.
 
-{The reason I made this is because I want to make this physical board game into a playable game that you can play on your computer or maybe an app or something like that. I don't have it all planned out or anything, but I am excited to learn about those processes and which platform I should choose. I want to be able to present this to the youth group members before they age out of the program.}
+#### The reason I made this is because I want to make this physical board game into a playable game that you can play on your computer or maybe an app or something like that. I don't have it all planned out or anything, but I am excited to learn about those processes and which platform I should choose. I want to be able to present this to the youth group members before they age out of the program.
 
 
 
@@ -12,7 +12,7 @@
 
 # Relational Database
 
-{I created this database in sqlite3 and the overall database is called Dungee.db.}
+I created this database in sqlite3 and the overall database is called Dungee.db.
 
 {I created the tables into logical separations of the cards you play with in the game. There are 5 total tables that I created: an ark table for the visualization of the ark piece of the board game, a rain_resource table which stores the cards that represent the various water cards you can draw during the game, food_resources which store the various foods that you can feed your mythological creatures to keep them alive, mythological_creatures which stores the various mythological creatures you can draw in the game, and finally special_cards which stores a number of special cards within that table.}
 
