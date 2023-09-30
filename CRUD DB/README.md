@@ -11,7 +11,7 @@
 ## Game Design by the kids
 
 
-![game designs](Dagee_pic_original.jpg)
+![Game Designs](Dagee_pic_original.jpg "Dagee Game Design")
 
 # Software Demo
 
