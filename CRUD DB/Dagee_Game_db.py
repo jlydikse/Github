@@ -7,6 +7,7 @@ connection = sqlite3.connect("Dagee.db")
 cursor = connection.cursor()
 
 
+
 # create a table in the database
 # (name, value, type [1 = good or 2 = bad ])
 
