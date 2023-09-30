@@ -1,6 +1,6 @@
 # Overview
 
-![game designs](C:\Users\jlydi\OneDrive\Desktop\Git\CRUD DB\Dagee_pic_original.jpg)
+![game designs](Git\CRUD DB\Dagee_pic_original.jpg)
 
 <p>I have always been interested in working with databases, but haven't always been good at it, so I decided to create a small database Python program that communicates with sqlite3 in order to create the database and perform various SQL commands. I wanted to practice and perfect the CRUD operations within SQL using this approach, and I feel like I did a pretty great job!</p>
 
