@@ -2,7 +2,7 @@
 
 
 
-<p>I have always been interested in working with databases, but haven't always been good at it, so I decided to create a small database Python program that communicates with sqlite3 in order to create the database and perform various SQL commands. I wanted to practice and perfect the CRUD operations within SQL using this approach, and I feel like I did a pretty great job!</p>
+<p>I have always been interested in working with databases, but haven't always been good at it, so I decided to create a small database Python program that communicates with SQLite3 in order to create the database and perform various SQL commands. I wanted to practice and perfect the CRUD operations within SQL using this approach, and I feel like I did a pretty great job!</p>
 
 ## Idea and reason for making
 <p>The database I chose to create is based on a board game I helped create with the youth group I am partially in charge on for my church. We spent probably 4 months of activities creating a board game with the kids that answers a simple question, "What if, the reason there are no mythological creatures on earth anymore, is because they could not get onto Noah's Ark for some reason?" The program I created goes through and creates various tables in a database named "Dagee.db" within sqlite3.</p>
