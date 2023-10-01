@@ -18,8 +18,12 @@ ark = [
 ]
 
 
+# create a table in the database
+# (name, value, type [1 = good or 2 = bad ])
+
 
 cursor.execute("create table rain_resources (resource_name text, resource_value integer, resource_type int)")
+
 
 
 rain_resources = [
@@ -31,6 +35,8 @@ rain_resources = [
 
 # we will need to use cursor.executemany because we will be loading multiple lines at once
  
+
+
 cursor.executemany("insert into rain_resources values (?, ?, ?)", rain_resources)
 
 
@@ -44,7 +50,8 @@ for x in cursor.execute("select * from rain_resources"):
 
 print("----------------------")
 
-# (name, description, type [1 = good or 2 = bad ])
+# create a table in the database
+# (name, value, type [1 = good or 2 = bad ])
 
 cursor.execute("create table food_resources (food_resource_name text, food_description text, food_type int)")
 
@@ -58,18 +65,16 @@ food_resources = [
     ("Poison", "Makes you go one less space", 2)
 ]
 
-
-
-
-
 cursor.executemany("insert into food_resources values (?, ?, ?)", food_resources)
 
 for x in cursor.execute("select * from food_resources"):
     print(x)
 
-#################################################################
+
 # I changed my mind, and don't want to include Mysterious Mangoes
+
 print("----------------------")
+
 cursor.execute("delete from food_resources where food_resource_name = ?", ("Mysterious Mangoes",))
 
 
@@ -83,6 +88,7 @@ print("----------------------")
 cursor.execute("create table mythological_creatures (mythological_creature_name text, mythological_creature_description text, mythological_creature_value integer)")
 
 # (name, description, type [1 = good or 2 = bad ])
+
 mythological_creatures = [
     ("Trash Panda", "Trash Panda replaces a current creature on the field", 1),
     ("Phoenix", "You can place this creature on the field", 1),
@@ -93,13 +99,10 @@ mythological_creatures = [
 
 cursor.executemany("insert into mythological_creatures values (?, ?, ?)", mythological_creatures)
 
-
 for x in cursor.execute("select * from mythological_creatures"):
     print(x)
 
-
 print("----------------------")
-
 
 cursor.execute("create table special_cards (special_cards_name text, special_cards_description text, special_cards_type integer)")
 
@@ -120,14 +123,12 @@ for x in cursor.execute("select * from special_cards"):
 
 print("----------------------")
 
-
 # here I am purposefully selecting a hand that will be bad for the user
 
 your_hand = [cursor.execute("select * from rain_resources where resource_type = 2").fetchall(),
              cursor.execute("select * from mythological_creatures limit 2 offset 3").fetchall(),
              cursor.execute("select * from special_cards limit 1 offset 4").fetchall(),
              cursor.execute("select * from food_resources where food_type = 2").fetchall()]
-
 
 mythological_creatures_in_hand = your_hand[1]
 
@@ -146,7 +147,6 @@ for cards in your_hand:
     for row in cards:
         print(row[0])
 
-
 # separator
 print("----------------------")
 print("Mythological Creatures Saved from The Great Flood: ")
@@ -158,7 +158,6 @@ for row in cursor.execute("select * from ark"):
     print(row[1])
 
 print("----------------------")
-
 
 ### I am performing a join from food_resources and mythological_creatures ###
 
@@ -182,6 +181,8 @@ cursor.execute("""
 
 joined_table = cursor.fetchall()
 
+
+
 # print out the joined_table
 print("")
 print("What creature can eat a type 2 foods")
@@ -194,11 +195,49 @@ print("_________________________________________________________________________
 for row in joined_table:
     print("{:<18} | {:<9} | {:<26} | {}".format(row[0], row[1], row[2], row[3]))
 
+
+# This is the same join as above, but now it 
+# will only show the food and creatures food type = 1
+cursor.execute("""
+        select food_resources.food_resource_name,
+               food_resources.food_type,
+               mythological_creatures.mythological_creature_name,
+               mythological_creatures.mythological_creature_value
+               
+        from food_resources
+
+        join mythological_creatures 
+        
+        on food_resources.food_type = mythological_creatures.mythological_creature_value
+        
+        where food_resources.food_type = 1;
+        
+""")
+joined_table2 = cursor.fetchall()
+
+# print out the joined_table
+print("")
+print("What creature can eat a type 1 foods")
+
+print("")
+print("Food Resource Name   | Food Type | Mythological Creature Name | Mythological Creature Type")
+print("________________________________________________________________________________________")
+
+# figured the alignment should be 18, 9 and 26 respectively
+# unless it is for Miraculous Mushrooms, which needs reformatting
+# in the else statement below
+for row in joined_table2:
+    if row[0] != "Miraculous Mushrooms":
+        print("{:<20} | {:<9} | {:<26} | {}".format(row[0], row[1], row[2], row[3]))
+    else:
+        print("{:<18} | {:<9} | {:<26} | {}".format(row[0], row[1], row[2], row[3]))
+
+# this functions just like a git commit command within to a github repo
+# committing all the code that came before it to the SQLite3 db
 connection.commit()
 
-
-
-
+# close your connection here
+# this is required when working with SQLite3
 connection.close()
 
 
