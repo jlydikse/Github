@@ -6,8 +6,6 @@ connection = sqlite3.connect("Dagee.db")
 # communication with our database
 cursor = connection.cursor()
 
-
-
 # create a table in the database
 # (name, value, type [1 = good or 2 = bad ])
 
@@ -17,14 +15,10 @@ ark = [
     
 ]
 
-
 # create a table in the database
 # (name, value, type [1 = good or 2 = bad ])
 
-
 cursor.execute("create table rain_resources (resource_name text, resource_value integer, resource_type int)")
-
-
 
 rain_resources = [
     ("raindrop", 1, 2),
@@ -34,19 +28,12 @@ rain_resources = [
 ]
 
 # we will need to use cursor.executemany because we will be loading multiple lines at once
- 
-
 
 cursor.executemany("insert into rain_resources values (?, ?, ?)", rain_resources)
-
 
 # this makes the table readable within the ide
 for x in cursor.execute("select * from rain_resources"):
     print(x)
-
-
-
-
 
 print("----------------------")
 
@@ -54,7 +41,6 @@ print("----------------------")
 # (name, value, type [1 = good or 2 = bad ])
 
 cursor.execute("create table food_resources (food_resource_name text, food_description text, food_type int)")
-
 
 food_resources = [
     ("Magical Mallows", "This is a magical marshmallow you can feed certain animals", 1),
@@ -70,20 +56,16 @@ cursor.executemany("insert into food_resources values (?, ?, ?)", food_resources
 for x in cursor.execute("select * from food_resources"):
     print(x)
 
-
 # I changed my mind, and don't want to include Mysterious Mangoes
 
 print("----------------------")
 
 cursor.execute("delete from food_resources where food_resource_name = ?", ("Mysterious Mangoes",))
 
-
-
 for x in cursor.execute("select * from food_resources"):
     print(x)
 
 print("----------------------")
-
 
 cursor.execute("create table mythological_creatures (mythological_creature_name text, mythological_creature_description text, mythological_creature_value integer)")
 
@@ -181,8 +163,6 @@ cursor.execute("""
 
 joined_table = cursor.fetchall()
 
-
-
 # print out the joined_table
 print("")
 print("What creature can eat a type 2 foods")
@@ -194,7 +174,6 @@ print("_________________________________________________________________________
 # figured the alignment should be 18, 9 and 26 respectively
 for row in joined_table:
     print("{:<18} | {:<9} | {:<26} | {}".format(row[0], row[1], row[2], row[3]))
-
 
 # This is the same join as above, but now it 
 # will only show the food and creatures food type = 1
