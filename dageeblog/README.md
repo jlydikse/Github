@@ -15,13 +15,13 @@ The reason I created this was to learn more about webapps and see if I liked cre
 There are a total of 3 webpages within this web application.
 
 ## Post_list page
-### Dynamic Content: List of blog posts retrieved from the database
+**Dynamic Content:** List of blog posts retrieved from the database
 
 ## Post_edit page
-### Dynamic Content: provides a form to input blog post title and content
+**Dynamic Content:** Provides a form to input blog post title and content
 
 ## Post_description page.
-### Dynamic Content: Title and content of a specific blog post
+**Dynamic Content:** Title and content of a specific blog post
 
 
 # Development Environment
