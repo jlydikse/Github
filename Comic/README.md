@@ -10,8 +10,8 @@ I was able to use C++ in order to create this inventory system. Along with other
 
 # Useful Websites
 
-- [Web Site Name](https://www.codewithharry.com/blogpost/cpp-cheatsheet/)
-- [Web Site Name](https://www.w3schools.com/cpp/)
+- [Code With Harry](https://www.codewithharry.com/blogpost/cpp-cheatsheet/)
+- [W3 Schools](https://www.w3schools.com/cpp/)
 
 # Future Work
 
