@@ -1,8 +1,8 @@
 // Replace these values with your Twitter API credentials
-const apiKey = 'w9HezbN7BY0lzWQSz8euQT9yw';
-const apiSecretKey = 'KkVJE0ydMbJl948ixvNDDuYx9qeaZuhUsBYNhR2grI5eqhcamh';
-const accessToken = '3354462514-MQI4E59mGjEnuV0PP4xT4JBTDtefF79vOVsHFoe';
-const accessTokenSecret = 'pmK2SOw74I8IFUdu4Q7HCUKkO4dAAbdYrU3OujHJiDpVV';
+const apiKey = '';
+const apiSecretKey = '';
+const accessToken = '';
+const accessTokenSecret = '';
 
 // Twitter API endpoint
 const apiUrl = 'http://localhost:3000/tweets';;

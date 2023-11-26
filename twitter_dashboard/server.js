@@ -22,6 +22,7 @@ app.get('/tweets', async (req, res) => {
     const apiUrl = 'https://api.twitter.com/2/tweets';
     const response = await fetch(apiUrl, {
         headers: {
+            // Insert Bearer Access Token Here
             'Authorization': `AAAAAAAAAAAAAAAAAAAAAFvWrAEAAAAAEACeFBq8gPpQ4n2WvFkU5Yixyvs%3DwDiPfNvk0R74Nam8qfAIgTVmcz1q9DLulvVED2Q5EvbVJPPD7W`
         }
     });
