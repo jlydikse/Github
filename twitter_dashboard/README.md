@@ -10,14 +10,12 @@ I used JavaScript to write what code I came up with, along with HTML and some CS
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 
 - [Twitter](https://developer.twitter.com/en/docs/tutorials/step-by-step-guide-to-making-your-first-request-to-the-twitter-api-v2)
 - [Rapid API](https://rapidapi.com/blog/how-to-use-the-twitter-api-with-javascript/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 
 - I need to figure out why my API is not working
 - I need to create a much more compelling UI
